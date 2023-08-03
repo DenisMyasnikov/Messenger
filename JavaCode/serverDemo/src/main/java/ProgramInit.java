@@ -1,6 +1,3 @@
-import java.sql.ResultSet;
-import java.sql.SQLException;
-
 public class ProgramInit {
 
     private final static String url = "jdbc:mysql://localhost:3306/messenger?" +
