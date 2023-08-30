@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.net.ServerSocket;
 
 public class Server {
-    public Server() {
+    public Server(Protocol protocol) {
         try (ServerSocket server = new ServerSocket(8000)) {
             System.out.println("Server started");
 
@@ -15,6 +15,7 @@ public class Server {
                     String request = phone.readLine();
                     System.out.println("Request: " + request);
                     String response = (int)(Math.random()* 30) + "";
+                    protocol.aggregator(request);
                     try {
                         Thread.sleep(4000);
                     } catch (InterruptedException e) {
@@ -22,6 +23,7 @@ public class Server {
                     }
                     phone.writeLine(response);
                     System.out.println("Response: " + response);
+
                     try {
                         phone.close();
                     } catch (IOException e) {

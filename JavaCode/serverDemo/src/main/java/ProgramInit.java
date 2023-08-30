@@ -4,10 +4,10 @@ public class ProgramInit {
             "user=root&password=root";
     public static void main(String[] args) {
 
+
         Connecter conn = new Connecter(url);
-        Server server = new Server();
-
-
+        Protocol protocol = new Protocol(conn);
+        Server server = new Server(protocol);
     }
 
 }
