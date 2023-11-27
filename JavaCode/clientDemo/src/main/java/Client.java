@@ -13,6 +13,7 @@ public class Client {
                 System.out.println("connected to server");
                 Scanner in = new Scanner(System.in);
 
+
                 request = in.nextLine();
                 System.out.println("Request: " + request);
                 phone.writeLine(request);
